@@ -12,8 +12,15 @@
   },
   "author": "Jeff Horemans",
   "license": "Apache-2.0",
+  "bin": {
+    "elm-multitier-make": "./index.js"
+  },
   "bugs": {
     "url": "https://github.com/JeffHoremans/elm-multitier-make/issues"
   },
-  "homepage": "https://github.com/JeffHoremans/elm-multitier-make#readme"
+  "homepage": "https://github.com/JeffHoremans/elm-multitier-make#readme",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "shelljs": "^0.7.6"
+  }
 }
