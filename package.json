@@ -1,0 +1,19 @@
+{
+  "name": "elm-multitier-make",
+  "version": "1.0.0",
+  "description": "A build tool for multitier Elm projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeffHoremans/elm-multitier-make.git"
+  },
+  "author": "Jeff Horemans",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/JeffHoremans/elm-multitier-make/issues"
+  },
+  "homepage": "https://github.com/JeffHoremans/elm-multitier-make#readme"
+}
