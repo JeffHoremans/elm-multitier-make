@@ -37,6 +37,7 @@ if(file_input){
           child_process.execSync('elm-make ' + clientFile + ' --warn --output client.js', {stdio:[process.stdin,process.stdout,process.stderr]});
           child_process.execSync('elm-make ' + serverFile + ' --warn --output server.js', {stdio:[process.stdin,process.stdout,process.stderr]});
           fs.writeFileSync('index.html', clientHtml(moduleName));
+          fs.appendFileSync('server.js', serverStartHack());
         } catch (err){
           console.log('elm-multitier-make: failed')
         }
@@ -92,4 +93,25 @@ function clientHtml(module) {
     <script type="text/javascript">Elm.ClientStarter.fullscreen(state)</script>
   </body>
 </html>`
+}
+
+function serverStartHack() {
+return `(function() {
+
+    var isNode = typeof global !== "undefined" && ({}).toString.call(global) === '[object global]';
+
+    if (isNode) {
+      setTimeout(function() {
+          if (!module.parent) {
+              if ('ServerStarter' in module.exports) {
+                  module.exports.ServerStarter.worker();
+              } else {
+                  throw new Error('ServerStarter module not found.');
+              }
+          }
+      });
+    } else {
+      return;
+    }
+})();`
 }
