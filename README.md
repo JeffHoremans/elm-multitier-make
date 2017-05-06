@@ -11,5 +11,5 @@ $ npm install elm-multitier-make
 
 ## Basic Usage
 ```bash
-elm-multitier-make Main.elm --output=main.html
+elm-multitier-make [filename].elm
 ```
