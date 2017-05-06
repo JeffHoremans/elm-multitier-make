@@ -2,8 +2,14 @@
 
 `elm-multitier-make` is a build tool for [multitier Elm](https://github.com/JeffHoremans/elm-multitier).
 
-## Basic Usage
+## Installation
 
+```sh
+$ npm install elm-multitier-make
+```
+
+
+## Basic Usage
 ```bash
-elm-make Main.elm --output=main.html
+elm-multitier-make Main.elm --output=main.html
 ```
